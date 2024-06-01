@@ -6,7 +6,7 @@ namespace Calculadora;
 public class UnitTest1
 {
 
-    public BaseCalculadora construirCasse()
+    public BaseCalculadora construirBase()
     {
         string data = "01/06/2024";
         BaseCalculadora calc = new BaseCalculadora("01/06/2024");
@@ -18,7 +18,7 @@ public class UnitTest1
     [InlineData (4, 5, 9)]
     public void TesteSomar(int valor1, int valor2, int resultado)
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirBase();
 
         int resultadoCalculadora = calc.somar(valor1, valor2);
 
@@ -30,7 +30,7 @@ public class UnitTest1
     [InlineData (5, 2, 10)]
     public void TesteMultiplicar(int valor1, int valor2, int resultado)
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirBase();
 
         int resultadoCalculadora = calc.multiplicar(valor1, valor2);
 
@@ -42,7 +42,7 @@ public class UnitTest1
     [InlineData (5, 5, 1)]
     public void TesteDividir(int valor1, int valor2, int resultado)
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirBase();
 
         int resultadoCalculadora = calc.dividir(valor1, valor2);
 
@@ -54,7 +54,7 @@ public class UnitTest1
     [InlineData (5, 5, 0)]
     public void TesteSubtrair(int valor1, int valor2, int resultado)
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirbase();
 
         int resultadoCalculadora = calc.subtrair(valor1, valor2);
 
@@ -63,7 +63,7 @@ public class UnitTest1
 
     public void TestarDivisaoPorZero()
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirBase();
 
         Assert.Throws<DivideByZeroException>(() => calc.dividir(3,0));
 
@@ -71,7 +71,7 @@ public class UnitTest1
 
      public void TestarHistorico()
     {
-        BaseCalculadora calc = construirCasse();
+        BaseCalculadora calc = construirBase();
 
         calc.somar(1, 2);
         calc.somar(2, 8);
